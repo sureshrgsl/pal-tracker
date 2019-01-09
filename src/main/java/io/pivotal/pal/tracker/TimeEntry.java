@@ -11,10 +11,10 @@ public class TimeEntry {
     private int hours;
 
     public void setId(long id) {
-        this.navid = id;
+        this.id = id;
     }
 
-    private long navid;
+    private long id;
 
     public TimeEntry(long projectId, long userId, LocalDate date, int hours) {
         this.projectId = projectId;
@@ -24,7 +24,7 @@ public class TimeEntry {
     }
 
     public TimeEntry(long id, long projectId, long userId, LocalDate date, int hours) {
-        this.navid = id;
+        this.id = id;
         this.projectId = projectId;
         this.userId = userId;
         this.date = date;
@@ -52,7 +52,7 @@ public class TimeEntry {
     }
 
     public Long getId() {
-        return navid;
+        return id;
     }
 
     public long getProjectId() {
@@ -78,12 +78,12 @@ public class TimeEntry {
         TimeEntry timeEntry = (TimeEntry) o;
         return projectId == timeEntry.projectId &&
                 userId == timeEntry.userId &&
-                navid == timeEntry.navid;
+                id == timeEntry.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(projectId, userId, navid);
+        return Objects.hash(projectId, userId, id);
     }
 
     @Override
@@ -93,7 +93,7 @@ public class TimeEntry {
                 ", userId=" + userId +
                 ", date=" + date +
                 ", hours=" + hours +
-                ", id=" + navid +
+                ", id=" + id +
                 '}';
     }
 }
